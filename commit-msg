@@ -1,6 +1,6 @@
 #!/bin/bash
 
-print_error(){
+print_warning(){
 cat <<EOF
 ------------------------------------------------------------
 Warning:
@@ -21,7 +21,7 @@ test "" != "$(grep '^[[:space:]]*SEAL-[[:digit:]][[:digit:]]*:' "$1")" || {
     if [[ $BRANCH_NAME =~ ^SEAL-[[:digit:]]+- ]]; then
         # Branch name is SEAL compliant, then assume the commit message
         # should be compliant as well.
-        print_error
+        print_warning
         PREFIX=$(echo $BRANCH_NAME | sed 's/\(^SEAL-[[:digit:]]*\)-.*/\1/')
         sed -i "0,/^/s//$PREFIX: /" $1
     fi
