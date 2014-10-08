@@ -13,7 +13,7 @@ EOF
 
 print_error(){
 cat <<EOF
-Branch name should start with SEAL-NNN
+The format of the branch name should be SEAL-NNN-your_branch_description
 EOF
 }
 

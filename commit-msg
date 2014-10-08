@@ -1,0 +1,21 @@
+#!/bin/bash
+
+print_error(){
+cat <<EOF
+Warning:
+The format of the commit message should be:
+SEAL-NNN: your commit message
+
+where SEAL-NNN should be the same as your branch name.
+
+EOF
+}
+
+test "" != "$(grep '^[[:space:]]*SEAL-[[:digit:]][[:digit:]]*:' "$1")" || {
+    print_error
+
+    echo "current branch name:"
+    echo $(git rev-parse --abbrev-ref HEAD)
+
+    exit 1
+}
