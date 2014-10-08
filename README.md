@@ -14,16 +14,18 @@ There are two things in this repo:
   already, if it doesn't it will prepend it automatically.
 
   to use it, drop the the commit-msg file to .git/hooks/ in your git
-  repository.
+  repository. It needs to be executable.
 
 - git-seal-branch
   is a git extension which we can use to create a branch, it will
   complain if the branch name isn't SEAL compliant (in the format of
-  SEAL-NNN-your-description)
+  SEAL-NNN-your-description).
 
   to use it, add it to PATH and run:
 
+  ```
   git seal-branch your-branch-name
-
+  ```
+  It needs to be executable.
 
 
