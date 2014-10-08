@@ -28,6 +28,6 @@ There are two things in this repo:
   ```
   git seal-branch your-branch-name
   ```
-  It needs to be executable.
+  to create your branch. It needs to be executable.
 
 
