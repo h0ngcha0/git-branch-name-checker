@@ -1,0 +1,37 @@
+#!/bin/bash
+
+usage(){
+cat <<EOF
+This is a git plugin which helps to check and/or create a SEAL compliant branch name.
+
+usage:
+
+git seal-branch your-branch-name
+
+EOF
+}
+
+print_error(){
+cat <<EOF
+Branch name should start with SEAL-NNN
+EOF
+}
+
+print_congrats(){
+cat <<EOF
+Your branch name is SEAL compliant :)
+EOF
+}
+
+if [ "$#" -ne 1 ]; then
+    usage
+    exit 1
+fi
+
+if [[ $1 =~ ^SEAL-[[:digit:]]+- ]]; then
+    print_congrats
+    git checkout -b "$1"
+else
+    print_error
+    exit 1
+fi
