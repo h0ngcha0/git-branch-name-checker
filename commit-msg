@@ -8,7 +8,8 @@ Warning:
 Your branch name is SEAL compliant, but your commit message
 is not. The format of the commit message should be:
 "SEAL-NNN: your commit message"
-where SEAL-NNN should be the same as your branch name.
+where SEAL-NNN should be the same as the prefix in your branch
+name.
 
 Automatically applying prefix....
 ------------------------------------------------------------
